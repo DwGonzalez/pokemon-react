@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/pokemon-react/static/css/main.cc4c8f2d.chunk.css",
+    "main.js": "/pokemon-react/static/js/main.215d16ac.chunk.js",
+    "main.js.map": "/pokemon-react/static/js/main.215d16ac.chunk.js.map",
+    "runtime-main.js": "/pokemon-react/static/js/runtime-main.6373b0c7.js",
+    "runtime-main.js.map": "/pokemon-react/static/js/runtime-main.6373b0c7.js.map",
+    "static/js/2.f0252158.chunk.js": "/pokemon-react/static/js/2.f0252158.chunk.js",
+    "static/js/2.f0252158.chunk.js.map": "/pokemon-react/static/js/2.f0252158.chunk.js.map",
+    "index.html": "/pokemon-react/index.html",
+    "static/css/main.cc4c8f2d.chunk.css.map": "/pokemon-react/static/css/main.cc4c8f2d.chunk.css.map",
+    "static/js/2.f0252158.chunk.js.LICENSE.txt": "/pokemon-react/static/js/2.f0252158.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/pokemon-react/static/media/bg.83c2337f.jpg",
+    "static/media/logo.47562f8d.png": "/pokemon-react/static/media/logo.47562f8d.png",
+    "static/media/spinner.11d9cde8.gif": "/pokemon-react/static/media/spinner.11d9cde8.gif"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6373b0c7.js",
+    "static/js/2.f0252158.chunk.js",
+    "static/css/main.cc4c8f2d.chunk.css",
+    "static/js/main.215d16ac.chunk.js"
+  ]
+}
