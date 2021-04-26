@@ -30,6 +30,9 @@ const PokemonItem = ({ pokemon }) => {
                         </li>
                         <li>
                             {/* <strong>Nickname:</strong> {item.nickname} */}
+                            <ul>
+                                <li>test</li>
+                            </ul>
                         </li>
                         <li>
                             {/* <strong>Birthday:</strong> {item.birthday} */}
