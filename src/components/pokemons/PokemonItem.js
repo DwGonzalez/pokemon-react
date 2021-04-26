@@ -1,44 +1,50 @@
 import React, { useState, useEffect } from 'react'
+import Spinner from '../ui/Spinner'
 import axios from 'axios'
 
 const PokemonItem = ({ pokemon }) => {
-    const [pokemonId, setPokemonId] = useState([])
+    const [pokemonDetails, setPokemonDetails] = useState([])
     const [isLoadingItem, setLoadingItem] = useState(true)
 
     useEffect(() => {
-        const fetchId = async () => {
+        const fetchPokemon = async () => {
             const result = await axios(pokemon.url)
-            //const picture = await axios(`https://pokeres.bastionbot.org/images/pokemon/${result.data.id}.png`)
-            setPokemonId(result.data.id)
-            //console.log(result.data.id)
+            setPokemonDetails(result.data)
             setLoadingItem(false)
         }
-        fetchId()
+        fetchPokemon()
     }, [])
 
-    return isLoadingItem ? <h1>Loading...</h1> : (
+    return isLoadingItem ? (
+        <Spinner />
+    ) : (
         <div className='card'>
             <div className='card-inner'>
                 <div className='card-front'>
-                    <img src={`https://pokeres.bastionbot.org/images/pokemon/${pokemonId}.png`} alt={pokemon.name} />
+                    <img src={`https://pokeres.bastionbot.org/images/pokemon/${pokemonDetails.id}.png`}
+                        alt={pokemon.name} />
                 </div>
                 <div className='card-back'>
                     <h1>{pokemon.name}</h1>
                     <ul>
                         <li>
-                            <strong>#{pokemonId}</strong>
+                            <strong>#{pokemonDetails.id}</strong>
                         </li>
-                        <li>
-                            {/* <strong>Nickname:</strong> {item.nickname} */}
-                            <ul>
-                                <li>test</li>
-                            </ul>
+                        <li> Types:
+                            <ol>
+                                {pokemonDetails.types ?
+                                    pokemonDetails.types.map(type => <li key={type.type.name}>
+                                        <strong>- {type.type.name}</strong>
+                                    </li>) : 'undefined'}
+                            </ol>
                         </li>
-                        <li>
-                            {/* <strong>Birthday:</strong> {item.birthday} */}
-                        </li>
-                        <li>
-                            {/* <strong>Status:</strong> {item.status} */}
+                        <li>Abilities:
+                            <ol>
+                                {pokemonDetails.abilities ?
+                                    pokemonDetails.abilities.map(ab => <li key={ab.ability.name}>
+                                        <strong>- {ab.ability.name}</strong>
+                                    </li>) : 'undefined'}
+                            </ol>
                         </li>
                     </ul>
                 </div>
